@@ -14,12 +14,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        Movement();
+    }
+    private void Movement()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
     }
-
 }
